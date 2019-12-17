@@ -21,6 +21,8 @@ class Hangman extends React.Component {
         mistake: 0,
         guessed: new Set([]),
         answer: randomWord(),
+        screen:false,
+        win:false,
      
         }
      
@@ -28,9 +30,12 @@ class Hangman extends React.Component {
         this.guessedWord = this.guessedWord.bind(this)
         this.displayWinner = this.displayWinner.bind(this)
         this.handleGuess = this.handleGuess.bind(this)
+        this.resetButton = this.resetButton.bind(this)
         this.generate_QWERTY_Buttons = this.generate_QWERTY_Buttons.bind(this)
         this.generate_ASDF_Buttons = this.generate_ASDF_Buttons.bind(this)
         this.generate_ZXCVB_Buttons = this.generate_ZXCVB_Buttons.bind(this)
+        this.lose = this.lose.bind(this)
+        this.displayWinner = this.displayWinner.bind(this)
         // this.backtoOverlay = this.backtoOverlay.bind(this)
        
      }
@@ -54,12 +59,46 @@ class Hangman extends React.Component {
         letter => (this.state.guessed.has(letter) ? <li className="letter show">{letter}</li> :  <li className="letter"></li> ))}
 
 
+
+        resetButton = () => {
+            this.setState({
+              mistake: 0,
+              guessed: new Set([]),
+              answer: randomWord(),
+              screen:false,
+              win:false,
+
+            });
+          }
+
  displayWinner() {
 
-        return this.state.answer.split("").map(letter => 
+       return this.state.answer.split("").map(letter => (this.state.guessed.has(letter) ? letter : " _ ")); 
 
-        <li className=" letter show"> {letter} </li>
-    )
+ }
+
+lose() {
+
+this.setState({
+    
+    screen: true,
+    mistake:0,
+
+})
+
+ }
+
+ win() {
+
+    this.setState ({
+
+
+        win : true,
+        mistake: 0,
+        answer:'win',
+    })
+    
+
 
  }
 
@@ -117,10 +156,16 @@ render()
 {
 
     const gameOver = this.state.mistake >= this.props.maxWrong;
-    const isWinner = this.guessedWord().join("") === this.state.answer;
+    const isWinner = this.displayWinner().join("") === this.state.answer;
     let gameStat_QWERTY = this.generate_QWERTY_Buttons();
     let gameStat_ASDF = this.generate_ASDF_Buttons();
     let gameStat_ZXCVB = this.generate_ZXCVB_Buttons();
+
+    if (isWinner) {
+     
+ this.win()
+
+    }
 
 
 
@@ -138,6 +183,30 @@ return (
         <button className="btn__reset" onClick = {this.changeDisplay}>Start Game  </button>
       </div>
       
+
+      <div id="overlay" className="lose" style = {{ display: this.state.screen?'flex':'none'}}>
+        <h2 className="title">Wheel of Success</h2>
+
+
+         <h1>You Lose ! </h1>
+        
+        <button className="btn__reset" onClick = {this.resetButton}>Try Again  </button>
+      
+      </div>
+
+
+      <div id="overlay" className="win" style = {{ display: this.state.win?'flex':'none'}}>
+        <h2 className="title">Wheel of Success</h2>
+
+
+         <h1>You Win ! </h1>
+        
+        <button className="btn__reset" onClick = {this.resetButton}>Try Again  </button>
+      
+      </div>
+
+
+
         
       
       {/* <button onClick = {this.backtoOverlay}> Go back</button> */}
@@ -150,7 +219,7 @@ return (
             
              
 
-             {!gameOver ? this.guessedWord() : this.displayWinner() }
+             {!gameOver ? this.guessedWord() : this.lose() }
           
               
     
