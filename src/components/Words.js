@@ -11,7 +11,7 @@ let phrases = [
 
 function randomWord() {
     let words = phrases[Math.floor(Math.random() * phrases.length)]
-    return words.replace(/\s/g,'');
+    return words
   }
   
 console.log(randomWord())

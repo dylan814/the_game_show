@@ -54,9 +54,11 @@ class Hangman extends React.Component {
 
 
      guessedWord() {
-        console.log(this.state.answer)
+        // console.log(this.state.answer)
         return this.state.answer.split("").map(
-        letter => (this.state.guessed.has(letter) ? <li className="letter show">{letter}</li> :  <li className="letter"></li> ))}
+        letter => (this.state.guessed.has(letter) ?
+         <li className="letter show">{letter}</li> :  letter === ' '? <li className="space"></li>: 
+         <li className="letter"></li> ))}
 
 
 
@@ -73,7 +75,7 @@ class Hangman extends React.Component {
 
  displayWinner() {
 
-       return this.state.answer.split("").map(letter => (this.state.guessed.has(letter) ? letter : " _ ")); 
+       return this.state.answer.split('').map(letter => (this.state.guessed.has(letter) ? letter : " ")); 
 
  }
 
@@ -205,11 +207,6 @@ return (
       
       </div>
 
-
-
-        
-      
-      {/* <button onClick = {this.backtoOverlay}> Go back</button> */}
       <div id="banner" className="section">
         <h2 className="header">Wheel of Success</h2>
       </div>
@@ -217,19 +214,11 @@ return (
       <div id="phrase" className="section">
         <ul>
             
-             
-
-             {!gameOver ? this.guessedWord() : this.lose() }
-          
-              
+             {!gameOver ? this.guessedWord() : this.lose() }                   
     
-        </ul>
-
-        
+        </ul>        
       </div>
 
-     
-      
     
       <div id="qwerty" className="section">
         <div className="keyrow">
