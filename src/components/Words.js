@@ -9,11 +9,13 @@ let phrases = [
 ]
 
 
+// the function below randomizes the phrase selected and returns a word like 
+// this is react
+
 function randomWord() {
     let words = phrases[Math.floor(Math.random() * phrases.length)]
     return words
   }
   
-console.log(randomWord())
 
 export default randomWord 
