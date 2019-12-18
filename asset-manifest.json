@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/the_game_show/static/css/main.383c521c.chunk.css",
+    "main.js": "/the_game_show/static/js/main.4ce2f9b0.chunk.js",
+    "main.js.map": "/the_game_show/static/js/main.4ce2f9b0.chunk.js.map",
+    "runtime-main.js": "/the_game_show/static/js/runtime-main.8489a557.js",
+    "runtime-main.js.map": "/the_game_show/static/js/runtime-main.8489a557.js.map",
+    "static/js/2.8b9adb8f.chunk.js": "/the_game_show/static/js/2.8b9adb8f.chunk.js",
+    "static/js/2.8b9adb8f.chunk.js.map": "/the_game_show/static/js/2.8b9adb8f.chunk.js.map",
+    "index.html": "/the_game_show/index.html",
+    "precache-manifest.c66a7d2cd8acc866b973214508c23280.js": "/the_game_show/precache-manifest.c66a7d2cd8acc866b973214508c23280.js",
+    "service-worker.js": "/the_game_show/service-worker.js",
+    "static/css/main.383c521c.chunk.css.map": "/the_game_show/static/css/main.383c521c.chunk.css.map",
+    "static/js/2.8b9adb8f.chunk.js.LICENSE": "/the_game_show/static/js/2.8b9adb8f.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8489a557.js",
+    "static/js/2.8b9adb8f.chunk.js",
+    "static/css/main.383c521c.chunk.css",
+    "static/js/main.4ce2f9b0.chunk.js"
+  ]
+}
