@@ -2,6 +2,7 @@ import React from "react"
 import randomWord from "./Words"
 import logo from "../images/liveHeart.png"
 import logo2 from "../images/lostHeart.png"
+// import Landing from "./Landing"
 
 // Code adapted from https://github.com/simonjsuh/Reactjs-Hangman-Game-Source-Code
 
@@ -210,14 +211,15 @@ return (
 
         {/* this is the start overlay screen which gets toggled off by setting display to none when
         the changeDisplay function is called on the onClick event  */}
-    
-      <div id="overlay" className="start" style = {{ display: !this.state.overlay?'none':'flex'}}>
+
+     <div id="overlay" className="start" style = {{ display: !this.state.overlay?'none':'flex'}}>
         <h2 className="title">Wheel of Success</h2>
         
-        <button className="btn__reset" onClick = {this.changeDisplay}>Start Game  </button>
-      </div>
+       <button className="btn__reset" onClick = {this.changeDisplay}>Start Game  </button>
+       </div>
+    
       
-
+      
       {/* this is the lose overlay screen toggled from the state screen variable.
       The reset button resets all the necessary state variables and therefore reloads the 
       game */}
