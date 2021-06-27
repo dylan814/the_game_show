@@ -1,6 +1,6 @@
 ﻿These files are a part of Dylan Pereira’s submission for Treehouse's Front-End Web Development Techdegree project "Game Show App." <br/>
 <br/>
-This project involved:
+This project involved: <br/>
 • creating and manipulating arrays, <br/>
 • displaying a random phrase from an array on screen, <br/>
 • adding event handlers to an on-screen keyboard, <br/>
