@@ -1,4 +1,4 @@
-﻿These files are a part of Dylan Pereira’s submission for Treehouse's Front-End Web Development Techdegree project "Game Show App."
+﻿These files are a part of Dylan Pereira’s submission for Treehouse's Front-End Web Development Techdegree project "Game Show App." </br/>
 This project involved:
 • creating and manipulating arrays, <br/>
 • displaying a random phrase from an array on screen, <br/>
@@ -13,4 +13,6 @@ This project involved:
 • HTML validated via the W3C Markup Validation Service. <br/>
 • CSS validated via the W3C CSS Validation Service. <br/>
 • JS checked via JS Hint and JS console in aforementioned browsers. <br/>
+
+<br/>
 Live Website: https://dylan814.github.io/the_game_show/
